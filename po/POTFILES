@@ -1,0 +1,4 @@
+data/espviewer.yakcheck.io.desktop.in
+data/espviewer.yakcheck.io.metainfo.xml.in
+data/espviewer.yakcheck.io.gschema.xml
+src/window.ui
