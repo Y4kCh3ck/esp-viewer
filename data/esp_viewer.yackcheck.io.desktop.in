@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=esp_viewer
+Exec=esp_viewer
+Icon=esp_viewer.yackcheck.io
+Terminal=false
+Type=Application
+Categories=GTK;
+StartupNotify=true

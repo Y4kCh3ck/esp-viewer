@@ -1,1 +1,1 @@
-i18n.gettext('esp-viewer', preset: 'glib')
+i18n.gettext('esp_viewer', preset: 'glib')

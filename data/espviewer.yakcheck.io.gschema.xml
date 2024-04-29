@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<schemalist gettext-domain="esp-viewer">
-	<schema id="espviewer.yakcheck.io" path="/espviewer/yakcheck/io/">
-	</schema>
-</schemalist>

@@ -1,6 +1,6 @@
 desktop_file = i18n.merge_file(
-        input: 'espviewer.yakcheck.io.desktop.in',
-       output: 'espviewer.yakcheck.io.desktop',
+        input: 'esp_viewer.yackcheck.io.desktop.in',
+       output: 'esp_viewer.yackcheck.io.desktop',
          type: 'desktop',
        po_dir: '../po',
       install: true,
@@ -13,8 +13,8 @@ if desktop_utils.found()
 endif
 
 appstream_file = i18n.merge_file(
-        input: 'espviewer.yakcheck.io.metainfo.xml.in',
-       output: 'espviewer.yakcheck.io.metainfo.xml',
+        input: 'esp_viewer.yackcheck.io.metainfo.xml.in',
+       output: 'esp_viewer.yackcheck.io.metainfo.xml',
        po_dir: '../po',
       install: true,
   install_dir: get_option('datadir') / 'metainfo'
@@ -24,7 +24,7 @@ appstreamcli = find_program('appstreamcli', required: false, disabler: true)
 test('Validate appstream file', appstreamcli,
      args: ['validate', '--no-net', '--explain', appstream_file])
 
-install_data('espviewer.yakcheck.io.gschema.xml',
+install_data('esp_viewer.yackcheck.io.gschema.xml',
   install_dir: get_option('datadir') / 'glib-2.0' / 'schemas'
 )
 

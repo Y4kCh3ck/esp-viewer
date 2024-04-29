@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+	<requires lib="gtk" version="4.0"/>
+	<requires lib="Adw" version="1.0"/>
+
+	<template class="connect_dialog" parent="AdwDialog">
+		<property name="title" translatable="yes">Connection Details</property>
+		<property name="content-height">275</property>
+		<property name="content-width">350</property>
+		<property name="follows-content-size">false</property>
+		<property name="child">
+			<object class="AdwToolbarView">
+				<child type="top">
+					<object class="AdwHeaderBar"></object>
+				</child>
+				<property name="content">
+					<object class="AdwPreferencesPage">
+						<child>
+							<object class="AdwPreferencesGroup">
+								<child>
+									<object class="AdwEntryRow" id="ip_address_entry">
+										<property name="title" translatable="yes">IP address</property>
+									</object>
+								</child>
+								<child>
+									<object class="AdwEntryRow" id="port_entry">
+										<property name="title" translatable="yes">Port</property>
+									</object>
+								</child>
+							</object>
+						</child>
+						<child>
+							<object class="AdwPreferencesGroup">
+								<child>
+									<object class="GtkButton" id="connect_button">
+										<property name="label">Connect</property>
+									</object>
+								</child>
+							</object>
+						</child>
+					</object>
+				</property>
+			</object>
+		</property>
+	</template>
+</interface>

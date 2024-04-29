@@ -1,4 +1,6 @@
-data/espviewer.yakcheck.io.desktop.in
-data/espviewer.yakcheck.io.metainfo.xml.in
-data/espviewer.yakcheck.io.gschema.xml
+data/esp_viewer.yackcheck.io.desktop.in
+data/esp_viewer.yackcheck.io.metainfo.xml.in
+data/esp_viewer.yackcheck.io.gschema.xml
+src/main.py
+src/window.py
 src/window.ui
