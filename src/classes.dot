@@ -1,0 +1,12 @@
+digraph "classes" {
+rankdir=BT
+charset="utf-8"
+"src.configparser.ConfigParser" [color="black", fontcolor="black", label=<{ConfigParser|config_file_path<br ALIGN="LEFT"/>|create_example()<br ALIGN="LEFT"/>print_config()<br ALIGN="LEFT"/>read_config_pins()<br ALIGN="LEFT"/>}>, shape="record", style="solid"];
+"src.connect.ConnectDialog" [color="black", fontcolor="black", label=<{ConnectDialog|connect_button<br ALIGN="LEFT"/>id_addr : str<br ALIGN="LEFT"/>ip_address_entry<br ALIGN="LEFT"/>port : str<br ALIGN="LEFT"/>port_entry<br ALIGN="LEFT"/>|establish_connection(ip_addr, port)<br ALIGN="LEFT"/>on_button_clicked(widget)<br ALIGN="LEFT"/>post_digital_pin_state(pin_id, pin_state)<br ALIGN="LEFT"/>}>, shape="record", style="solid"];
+"src.controls.ControlsPageGenerator" [color="black", fontcolor="black", label=<{ControlsPageGenerator|<br ALIGN="LEFT"/>|generate()<br ALIGN="LEFT"/>}>, shape="record", style="solid"];
+"src.main.EspViewerApplication" [color="black", fontcolor="black", label=<{EspViewerApplication|<br ALIGN="LEFT"/>|create_action(name, callback, shortcuts)<br ALIGN="LEFT"/>do_activate()<br ALIGN="LEFT"/>on_about_action(widget, _)<br ALIGN="LEFT"/>on_preferences_action(widget, _)<br ALIGN="LEFT"/>}>, shape="record", style="solid"];
+"src.window.EspViewerWindow" [color="black", fontcolor="black", label=<{EspViewerWindow|camera_page<br ALIGN="LEFT"/>connection_button<br ALIGN="LEFT"/>connection_dialog<br ALIGN="LEFT"/>controls_page<br ALIGN="LEFT"/>disconnected_stack<br ALIGN="LEFT"/>view_switcher<br ALIGN="LEFT"/>|<I>connection_established_callback</I>()<br ALIGN="LEFT"/>generate_camera_content()<br ALIGN="LEFT"/>generate_controls_content()<br ALIGN="LEFT"/>pin_change_callback(switch: Adw.SwitchRow, arg2)<br ALIGN="LEFT"/>show_connect_dialog(button)<br ALIGN="LEFT"/>switch_stack()<br ALIGN="LEFT"/>}>, shape="record", style="solid"];
+"src.window.PinEntryFactory" [color="black", fontcolor="black", label=<{PinEntryFactory|<br ALIGN="LEFT"/>|create_pin_entry(pin_id, pin_description, callback)<br ALIGN="LEFT"/>}>, shape="record", style="solid"];
+"src.stackgenerator.StackGenerator" [color="black", fontcolor="black", label=<{StackGenerator|<br ALIGN="LEFT"/>|generate()<br ALIGN="LEFT"/>}>, shape="record", style="solid"];
+"src.connect.ConnectDialog" -> "src.window.EspViewerWindow" [arrowhead="diamond", arrowtail="none", fontcolor="green", label="connection_dialog", style="solid"];
+}

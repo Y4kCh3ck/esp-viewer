@@ -1,15 +1,19 @@
 from gi.repository import Adw
 from gi.repository import Gtk
 
+#
+
 import requests
 
 @Gtk.Template(resource_path='/esp_viewer/yackcheck/io/ui/connect_dialog.ui')
 class ConnectDialog(Adw.Dialog):
     __gtype_name__ = 'connect_dialog'
 
-    connect_button = Gtk.Template.Child()
-    ip_address_entry = Gtk.Template.Child()
-    port_entry = Gtk.Template.Child()
+    connect_button: Gtk.Button = Gtk.Template.Child()
+    ip_address_entry: Adw.EntryRow = Gtk.Template.Child()
+    port_entry: Adw.EntryRow = Gtk.Template.Child()
+
+    # stack: Adw.ViewStack = Gtk.Template.Child()
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
@@ -30,6 +34,10 @@ class ConnectDialog(Adw.Dialog):
         self.close()
 
     def establish_connection(self, ip_addr="192.168.4.1", port="80"):
+
+        self.id_addr = ip_addr
+        self.port = port
+
         url = "http://" + ip_addr + ":" + port
         print("ip: " + ip_addr)
         print("port: " + port)
@@ -47,4 +55,21 @@ class ConnectDialog(Adw.Dialog):
 
         is_alive, message = check_webpage(url)
         print(message)
+
+    @classmethod
+    def post_digital_pin_state(cls, pin_id, pin_state ):
+        payload = {
+           "pin_id": pin_id,
+           "state": pin_state
+        }
+
+        url = "http://" + cls.ip_addr + ":" + cls.port
+
+        try:
+            response = requests.post(url, json=payload)
+            response.raise_for_status()  # Raise an exception for HTTP errors
+            print("POST request successful")
+            print("Response:", response.json())
+        except requests.exceptions.RequestException as e:
+            print(f"Error sending POST request: {e}")
 

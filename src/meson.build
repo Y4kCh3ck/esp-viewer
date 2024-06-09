@@ -31,6 +31,9 @@ esp_viewer_sources = [
   'main.py',
   'window.py',
   'connect.py',
+  'stackgenerator.py',
+  'configparser.py',
+  'stream.py',
 ]
 
 install_data(esp_viewer_sources, install_dir: moduledir)

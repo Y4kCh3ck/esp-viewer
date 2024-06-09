@@ -1,1 +1,5 @@
 requests
+toml
+meson-python
+scikit-build
+opencv-python

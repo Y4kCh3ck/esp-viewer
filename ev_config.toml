@@ -1,0 +1,5 @@
+[ Board ]
+name = "esp-cam"
+model = "esp-cam"
+
+digital_pis = [ ["pin1", "pin2", "pin3", "pin4", "pin5"], ["LED 1", "LED 2", "LED 3", "SPEAKER", "CAMERA"] ]

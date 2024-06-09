@@ -6,11 +6,10 @@
     <property name="default-width">600</property>
     <property name="default-height">600</property>
 		<property name="width-request">400</property>
-		<property name="height-request">450</property>
+		<property name="height-request">420</property>
 		<child>
 			<object class="AdwBreakpoint">
 				<condition>max-width: 550sp</condition>
-				<setter object="switcher_bar" property="reveal">True</setter>
 				<setter object="header_bar" property="title-widget"/>
 			</object>
 		</child>
@@ -20,13 +19,15 @@
 				<child type="top">
 					<object class="AdwHeaderBar" id="header_bar">
 					  <child type="start">
-					    <object class="GtkButton" id="connect_button">
+					    <object class="GtkButton" id="connection_button">
 					      <property name="icon-name">radio-checked-symbolic</property>
+                <property name="tooltip-text" translatable="yes">Connect</property>
+					      <!-- <property name="action-name">win.show_connect_dialog</property> -->
 					    </object>
 					  </child>
 						<property name="title-widget">
-							<object class="AdwViewSwitcher">
-								<property name="stack">stack</property>
+							<object class="AdwViewSwitcher" id="view_switcher">
+								<property name="stack">disconnected_stack</property>
 								<property name="policy">wide</property>
 							</object>
 						</property>
@@ -38,32 +39,39 @@
 								<property name="menu-model">primary_menu</property>
 							</object>
 						</child>
+
 					</object>
 				</child>
 
 
 				<property name="content">
-					<object class="AdwViewStack" id="stack">
+					<object class="AdwViewStack" id="disconnected_stack">
 						<child>
-							<object class="AdwViewStackPage">
+
+							<object class="AdwViewStackPage" >
 								<property name="name">controls</property>
 								<property name="title">Controls</property>
 							  <property name="icon-name">input-gaming-symbolic</property>
 								<property name="child">
-									<object class="AdwStatusPage">
-									  <property name="title">Disconnected :(</property>
-								    <property name="description">Try hitting buton in top left.</property>
-							      <property name="icon-name">network-offline-symbolic</property>
-									</object>
+								<!-- 	<object class="AdwStatusPage"> -->
+								<!-- 	  <property name="title">Disconnected :(</property> -->
+								<!--     <property name="description">Try hitting buton in top left.</property> -->
+							 <!--      <property name="icon-name">network-offline-symbolic</property> -->
+								<!-- 	</object> -->
+								  <object class="AdwPreferencesPage" id="controls_page" >
+
+								  </object>
 								</property>
 							</object>
 					  </child>
 				    <child>
+
 					    <object class="AdwViewStackPage">
 							  <property name="name">overview</property>
 							  <property name="title">Camera</property>
 						    <property name="icon-name">camera-photo-symbolic</property>
 							  <property name="child">
+
 								  <object class="AdwStatusPage">
 									  <property name="title">Disconnected :(</property>
 								    <property name="description">Try hitting buton in top left.</property>
@@ -71,8 +79,14 @@
 								  </object>
 							  </property>
 						  </object>
+
 						</child>
+
+
 					</object>
+
+
+
 				</property>
 
 
@@ -92,7 +106,7 @@
         <attribute name="action">win.show-help-overlay</attribute>
       </item>
       <item>
-        <attribute name="label" translatable="yes">_About Esp_viewer</attribute>
+        <attribute name="label" translatable="yes">_About esp-viewer</attribute>
         <attribute name="action">app.about</attribute>
       </item>
     </section>

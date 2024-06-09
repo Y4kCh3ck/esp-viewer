@@ -1,0 +1,16 @@
+digraph "packages" {
+rankdir=BT
+charset="utf-8"
+"src" [color="black", label=<src>, shape="box", style="solid"];
+"src.configparser" [color="black", label=<src.configparser>, shape="box", style="solid"];
+"src.connect" [color="black", label=<src.connect>, shape="box", style="solid"];
+"src.controls" [color="black", label=<src.controls>, shape="box", style="solid"];
+"src.main" [color="black", label=<src.main>, shape="box", style="solid"];
+"src.stackgenerator" [color="black", label=<src.stackgenerator>, shape="box", style="solid"];
+"src.window" [color="black", label=<src.window>, shape="box", style="solid"];
+"src.main" -> "src.configparser" [arrowhead="open", arrowtail="none"];
+"src.main" -> "src.window" [arrowhead="open", arrowtail="none"];
+"src.window" -> "src.configparser" [arrowhead="open", arrowtail="none"];
+"src.window" -> "src.connect" [arrowhead="open", arrowtail="none"];
+"src.window" -> "src.stackgenerator" [arrowhead="open", arrowtail="none"];
+}

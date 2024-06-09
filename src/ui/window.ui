@@ -26,8 +26,8 @@
 					    </object>
 					  </child>
 						<property name="title-widget">
-							<object class="AdwViewSwitcher">
-								<property name="stack">stack</property>
+							<object class="AdwViewSwitcher" id="view_switcher">
+								<property name="stack">disconnected_stack</property>
 								<property name="policy">wide</property>
 							</object>
 						</property>
@@ -42,44 +42,44 @@
 
 					</object>
 				</child>
+
 				<property name="content">
-					<object class="AdwViewStack" id="stack">
+					<object class="AdwViewStack" id="disconnected_stack">
 						<child>
+
+
 							<object class="AdwViewStackPage">
 								<property name="name">controls</property>
 								<property name="title">Controls</property>
 							  <property name="icon-name">input-gaming-symbolic</property>
 								<property name="child">
-									<object class="AdwStatusPage">
-									  <property name="title">Disconnected :(</property>
-								    <property name="description">Try hitting buton in top left.</property>
-							      <property name="icon-name">network-offline-symbolic</property>
-									  <property name="visible">true</property>
+									<object class="AdwPreferencesPage" id="controls_page">
 									</object>
 
 								</property>
 							</object>
 					  </child>
-
-
 				    <child>
-					    <object class="AdwViewStackPage">
+
+					    <object class="AdwViewStackPage" >
 							  <property name="name">overview</property>
 							  <property name="title">Camera</property>
 						    <property name="icon-name">camera-photo-symbolic</property>
 							  <property name="child">
-								  <object class="AdwStatusPage">
-									  <property name="title">Disconnected :(</property>
-								    <property name="description">Try hitting buton in top left.</property>
-							      <property name="icon-name">network-offline-symbolic</property>
+
+
+								  <object class="GtkScrolledWindow" id="camera_page">
 								  </object>
 							  </property>
-
 						  </object>
+
 						</child>
 
 
 					</object>
+
+
+
 				</property>
 
 
